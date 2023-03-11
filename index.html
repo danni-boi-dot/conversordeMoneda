@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor de Divisas</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Conversor de Divisas</h1>
 
     <form>
-        <label for="cantidad">Cantidad:</label>
-        <input type="number" id="cantidad" name="cantidad">
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" name="cantidad" />
 
-        <label for="dMoneda">De Moneda:</label>
-        <select id="dMoneda" name="dMoneda">
-            <option value="USD">Dolar USA</option>
-            <option value="EUR">Euro</option>
-            <option value="LIB">Libra</option>
-            <option value="YEN">Yen Japones</option>
-            <option value="WON">Won Sur Corea</option>
-        </select>
+      <label for="dMoneda">De Moneda:</label>
+      <select id="dMoneda" name="dMoneda">
+        <option value="MEX">Peso Mexicano</option>
+        <option value="USD">Dolar USA</option>
+        <option value="EUR">Euro</option>
+        <option value="LIB">Libra</option>
+        <option value="YEN">Yen Japones</option>
+        <option value="WON">Won Sur Corea</option>
+      </select>
 
-        <label for="aMoneda">A Moneda:</label>
-        <select id="aMoneda" name="aMoneda">
-            <option value="USD">Dolar USA</option>
-            <option value="EUR">Euro</option>
-            <option value="LIB">Libra</option>
-            <option value="YEN">Yen Japones</option>
-            <option value="WON">Won Sur Corea</option>
-        </select>
+      <label for="aMoneda">A Moneda:</label>
+      <select id="aMoneda" name="aMoneda">
+        <option value="MEX">Peso Mexicano</option>
+        <option value="USD">Dolar USA</option>
+        <option value="EUR">Euro</option>
+        <option value="LIB">Libra</option>
+        <option value="YEN">Yen Japones</option>
+        <option value="WON">Won Sur Corea</option>
+      </select>
 
-        <button type="button" onclick="">Convertir</button>
+      <button type="button" onclick="convert()">Convertir</button>
     </form>
-
     <h2>Cantidad Convertida:</h2>
     <div id="cantConvertida"></div>
-</body>
+    <script src="convert.js"></script>
+  </body>
 </html>
