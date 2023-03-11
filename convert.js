@@ -3,9 +3,18 @@ function convert() {
   const dMoneda = document.getElementById("dMoneda").value;
   const aMoneda = document.getElementById("aMoneda").value;
 
-  const url = `https://api.exchangeratesapi.io/latest?base=${dMoneda}&symbols=${aMoneda}&access_key=kx0FIg023KgNdPZso1uUeOGSQUTisZ2T`;
+  var myHeaders = new Headers();
+  myHeaders.append("apikey", "kx0FIg023KgNdPZso1uUeOGSQUTisZ2T");
 
-  fetch(url)
+  var requestOptions = {
+    method: "GET",
+    redirect: "follow",
+    headers: myHeaders,
+  };
+
+  const url = `https://api.apilayer.com/exchangerates_data/convert?to=${aMoneda}&from=${dMoneda}&amount=${cantidad}`;
+
+  fetch(url, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Se produjo un error al obtener el tipo de cambio.");
@@ -13,12 +22,7 @@ function convert() {
       return response.json();
     })
     .then((data) => {
-      if (!data.rates || !data.rates[aMoneda]) {
-        throw new Error(
-          `No se pudo obtener el tipo de cambio para la moneda ${aMoneda}.`
-        );
-      }
-      const rate = data.rates[aMoneda];
+      const rate = data.result;
       const cantiConvertida = cantidad * rate;
       document.getElementById(
         "cantConvertida"
