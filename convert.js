@@ -12,7 +12,7 @@ function convert() {
     headers: myHeaders,
   };
 
-  const url = `https://api.apilayer.com/exchangerates_data/convert?to=${aMoneda}&from=${dMoneda}&amount=${cantidad}`;
+  const url = `https://api.apilayer.com/exchangerates_data/convert?to=${aMoneda}&from=${dMoneda}&amount=${cantidad}`; 
 
   fetch(url, requestOptions)
     .then((response) => {
@@ -22,8 +22,7 @@ function convert() {
       return response.json();
     })
     .then((data) => {
-      const rate = data.result;
-      const cantiConvertida = cantidad * rate;
+      const cantiConvertida = data.result.toFixed(3);
       document.getElementById(
         "cantConvertida"
       ).textContent = `${cantiConvertida} ${aMoneda}`;
