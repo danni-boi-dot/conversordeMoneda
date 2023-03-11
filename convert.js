@@ -25,7 +25,7 @@ function convert() {
       const cantiConvertida = data.result.toFixed(3);
       document.getElementById(
         "cantConvertida"
-      ).textContent = `${cantiConvertida} ${aMoneda}`;
+      ).value = `${cantiConvertida} ${aMoneda}`;
     })
     .catch((error) => {
       console.error(error);
