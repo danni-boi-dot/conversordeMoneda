@@ -3,7 +3,7 @@ function convert() {
     const dMoneda = document.getElementById("dMoneda").value;
     const aMoneda = document.getElementById("aMoneda").value;
 
-    const url = `https://api.exchangeratesapi.io/latest?base=${dMoneda}&symbols=${aMoneda}`;
+    const url = `https://api.exchangeratesapi.io/latest?base=${dMoneda}&symbols=${aMoneda}&access_key=kx0FIg023KgNdPZso1uUeOGSQUTisZ2T`;
 
     fetch(url)
         .then(response => response.json())
